@@ -32,6 +32,7 @@ gulp.task('sass', function() {
             cascade: true
         }))
         .pipe(gulp.dest('app/css'))
+          .pipe(connect.reload());
        
 });
 

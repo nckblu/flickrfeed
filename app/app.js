@@ -1,15 +1,17 @@
 'use strict';
 
 angular.module('flickrfeed', [
-    'ui.router'
+    'ui.router',
+    'flickrfeed.feed'
 
-]).
-config(['$stateProvider', '$urlRouterProvider',
+])
+
+.config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('feed', {
                 url: '/',
-                templateUrl: 'app/components/feed/feed.html',
+                templateUrl: '/components/feed/feed.html',
                 controller: 'FeedController'
             });
 

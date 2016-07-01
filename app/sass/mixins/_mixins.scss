@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+
+@mixin breakpoint($point) {
+    @media (min-width: $point) {
+        @content;
+    }
+}
+
+$sm: $screen-sm !default;
+$md: $screen-md !default;
+$lg: $screen-lg !default;
+
+$tablet: $sm !default;
+$normal: $md !default;
+$large: $lg !default;
+
+
+@mixin showUntilSm($display: "block") {
+    @include breakpoint($sm) {
+        display: none;
+    }
+}
+
+@mixin showAtSm($display: block) {
+    display: none;
+
+    @include breakpoint($sm) {
+        display: $display;
+    }
+}
+

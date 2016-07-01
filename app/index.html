@@ -1,13 +1,14 @@
 <!doctype html>
-<html ng-app="boardee">
+<html>
   <head>
     <meta charset="utf-8">
     <title>Flickr Feed</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <body>
+  <body ng-app="flickrfeed">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -16,7 +17,7 @@
     <header>
     <div class="container">
     
-         Flickr
+         Flickr dx
 
     </div>
        
@@ -28,10 +29,11 @@
     </div>
    
 
-    <!-- bower:js -->
-    <!-- endbower -->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     
-
-
+    <script src="app.js"></script>
+    <script src="components/feed/feed.controller.js"></script>
   </body>
 </html>
