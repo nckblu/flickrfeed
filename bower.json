@@ -1,0 +1,24 @@
+{
+  "name": "flickrfeed",
+  "description": "A small app to display flickr photos",
+  "main": "",
+  "authors": [
+    "Nick Porter <e@nck.me.uk>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/nckblu/flickrfeed",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.6",
+    "angular": "~1.5.7",
+    "angular-ui-router": "~0.3.1"
+  }
+}
