@@ -44,10 +44,10 @@
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/tooltip";
 // @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/popovers";
 // @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/carousel";
+@import "mixins/mixins";
 
 @import "base/base";
 @import "settings/variables";
 
-@import "mixins/mixins";
 @import "layout/header";
 @import "layout/footer";

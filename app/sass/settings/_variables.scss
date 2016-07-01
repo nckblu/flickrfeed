@@ -4,9 +4,18 @@ $bootstrap-sass-asset-helper: false !default;
 // --------------------------------------------------
 
 
+
+$light: 300;
+$regular: 400;
+$bold: 700;
+
 //== Colors
 //
 //## Gray and brand colors for use across Bootstrap.
+
+$blue: #2c242e;
+$pink: #ad2b65;
+$white: #fff;
 
 $gray-base:              #000 !default;
 $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
@@ -27,12 +36,12 @@ $brand-danger:          #d9534f !default;
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               #fff !default;
+$body-bg:               $blue !default;
 //** Global text color on `<body>`.
-$text-color:            $gray-dark !default;
+$text-color:            $white !default;
 
 //** Global textual link color.
-$link-color:            $brand-primary !default;
+$link-color:            $pink !default;
 //** Link hover color set via `darken()` function.
 $link-hover-color:      darken($link-color, 15%) !default;
 //** Link hover decoration.

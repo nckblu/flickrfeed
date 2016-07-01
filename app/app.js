@@ -2,7 +2,8 @@
 
 angular.module('flickrfeed', [
     'ui.router',
-    'flickrfeed.feed'
+    'flickrfeed.feed',
+     'flickrfeed.feedService'
 
 ])
 
