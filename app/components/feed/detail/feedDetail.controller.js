@@ -12,8 +12,6 @@ angular.module('flickrfeed.feedDetail', [])
             $state.go('feed');
         }
 
-        $scope.wrapClass = 'in-detail';
-
         $scope.item = $scope.items[$stateParams.index];
     }
 
