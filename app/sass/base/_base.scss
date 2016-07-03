@@ -2,6 +2,10 @@
    Global
    ========================================================================== */
 
+html {
+    // overflow: hidden;
+}
+
 body {
 	
 }
@@ -28,19 +32,14 @@ h1, .h1 {
 
 h2, .h2, h3, .h3 {
     font-size: $font-size-h2 * 0.8;
+    line-height: 40px;
 
     @include breakpoint($md) {
         font-size: $font-size-h2;
+        line-height: 40px;
     }
 }
 
-h3, .h3 {
-    font-size: $font-size-h3 * 0.8;
-
-    @include breakpoint($sm) {
-        font-size: $font-size-h3;
-    }
-}
 
 h4, .h4 {
     font-size: $font-size-h4;
@@ -52,4 +51,15 @@ h5, .h5 {
 
 h6, .h6 {
     font-size: $font-size-h6;
+}
+
+
+.container {
+    padding-right: 25px;
+    padding-left: 25px;
+
+    @include breakpoint($sm) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }

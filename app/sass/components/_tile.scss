@@ -4,8 +4,13 @@
 
 .tile {
 	@extend .animated;
-	
-	margin-bottom: $grid-gutter-width;
+		
+		margin-bottom: 30px;
+			
+		@include breakpoint($sm) {
+			margin-bottom: $grid-gutter-width;
+		}
+
 		&.ng-enter {
 			-webkit-transition: 1s linear all; /* Chrome */
 			transition: 1s linear all;
@@ -28,7 +33,7 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		padding-top: 100%;
-
+		cursor: pointer;
 	}
 	
 	
@@ -37,8 +42,26 @@
 	   ========================================================================== */
 
 	.title {
-		margin-top: $grid-gutter-width /2;
-		margin-bottom: $grid-gutter-width /2;
+		cursor: pointer;
+	    margin-top: 0px;
+	    margin-bottom: 5px;
+
+	    @include breakpoint(800px) {
+    		margin-top: $grid-gutter-width /2;
+			margin-bottom: $grid-gutter-width /2;
+	    }
+		h2 {
+
+			&.truncate {
+				white-space: nowrap;
+			    overflow: hidden;
+			    text-overflow: ellipsis;
+			    width: 100%;
+			}
+
+		}
+
+
 	}
 	
 	/* 
@@ -46,9 +69,47 @@
 	   ========================================================================== */
 
 	.meta {
-		> div {
-			display: inline-block;
+		display: flex;
+		flex-wrap: wrap;
+
+		@include breakpoint(800px) {
+			flex-wrap: nowrap;
 		}
+
+		> br {
+			@include breakpoint(800px) {
+				display: none;
+			}
+		}
+		.author {
+			order: 2;
+			margin-right: 20px;
+			@include breakpoint(800px) {
+				order: 1;
+				margin-right: 0;
+			}
+
+		}
+
+		.date {
+			width: 100%;
+		    margin-bottom: 5px;
+			order: 1;
+			
+			@include breakpoint(800px) {
+				order: 2;
+				margin: 0 20px;
+				width: auto;
+
+			}
+		}
+		
+		.link {
+			order: 3;
+
+		}
+		
 	}
+
 
 }

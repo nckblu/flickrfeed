@@ -21,7 +21,10 @@
 		   ========================================================================== */
 		
 		header {
-			padding-top: $grid-gutter-width *2;
+		    padding-top: 80px;
+		    @include breakpoint($sm) {
+		    	padding-top: $grid-gutter-width *2;
+		    }
 		}
 		
 			
@@ -40,16 +43,35 @@
 		.meta {
 			margin-bottom: $grid-gutter-width;
 		}
+
+		/* 
+		   Image
+		   ========================================================================== */
+		
+		.image {
+			margin-bottom: 20px;
+			
+			@include breakpoint($sm) {
+				margin-bottom: 0;
+			}
+		}
+	
 		
 		/* 
 		   Back
 		   ========================================================================== */
 		.back {
 		    font-size: 15px;
+		    margin-bottom: 20px;
 		    color: #ad2b65;
 		    position: absolute;
 		    top: 42px;
+			cursor: pointer;
 		    right: 0;
+
+		    &:hover {
+		    	color: $blue;
+		    }
 		}
 		
 		

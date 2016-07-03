@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('flickrfeed', [
-      'ngAnimate',
+    'ngAnimate',
     'ui.router',
     'flickrfeed.feed',
     'flickrfeed.feedDetail',
@@ -30,4 +30,6 @@ angular.module('flickrfeed', [
     }
 ])
 
-.filter('unsafe', function($sce) { return $sce.trustAsHtml; });
+.filter('unsafe', function($sce) {
+    return $sce.trustAsHtml;
+});
