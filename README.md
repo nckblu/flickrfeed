@@ -1,5 +1,7 @@
 # flickrfeed
 How to use:
+
+
 1. Clone or download
 
 2. Run npm install
