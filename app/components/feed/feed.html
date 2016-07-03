@@ -1,6 +1,6 @@
 <div class="wrap" ng-show="loaded">
 	
-	<div class="tile" ng-repeat="item in items" ng-click="viewDetail($index)">
+	<div class="tile" ng-click="viewDetail($index)" ng-repeat="item in items">
 		<div class="inner">
 			
 			<div class="row">
@@ -39,4 +39,4 @@
 
 </div>
 
-<div ui-view></div>
+<div class="singleItemView animated" ui-view></div>

@@ -46,6 +46,8 @@ angular.module('flickrfeed.feed', [])
 
         }
 
+        $scope.currentState = $state.current.name;
+
 
         init();
 

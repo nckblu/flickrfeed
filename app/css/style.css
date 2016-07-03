@@ -3347,12 +3347,51 @@ header.main {
 /* ==========================================================================
    Single Item
    ========================================================================== */
-.singleItem {
-  /* 
-	   Meta
-	   ========================================================================== */ }
-  .singleItem .meta {
-    margin-bottom: 30px; }
+.singleItemWrap {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  color: #2c242e; }
+  .singleItemWrap .singleItem {
+    position: relative;
+    /* 
+		   Header
+		   ========================================================================== */
+    /* 
+		   Title
+		   ========================================================================== */
+    /* 
+		   Meta
+		   ========================================================================== */
+    /* 
+		   Back
+		   ========================================================================== */ }
+    .singleItemWrap .singleItem header {
+      padding-top: 60px; }
+    .singleItemWrap .singleItem .title {
+      color: #ad2b65; }
+    .singleItemWrap .singleItem .meta {
+      margin-bottom: 30px; }
+    .singleItemWrap .singleItem .back {
+      font-size: 15px;
+      color: #ad2b65;
+      position: absolute;
+      top: 42px;
+      right: 0; }
+
+/* 
+   Associated UI View
+   ========================================================================== */
+.singleItemView {
+  position: absolute;
+  top: 0;
+  left: 0; }
+  .singleItemView.ng-leave {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s; }
 
 /* ==========================================================================
    Footer
@@ -3364,24 +3403,27 @@ header.main {
  *
  * Copyright (c) 2016 Daniel Eden
  */
-.animated {
+.animated, .tile {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both; }
 
-.animated.infinite {
+.animated.infinite, .infinite.tile {
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite; }
 
-.animated.hinge {
+.animated.hinge, .hinge.tile {
   -webkit-animation-duration: 2s;
   animation-duration: 2s; }
 
-.animated.flipOutX,
+.animated.flipOutX, .flipOutX.tile,
 .animated.flipOutY,
+.flipOutY.tile,
 .animated.bounceIn,
-.animated.bounceOut {
+.bounceIn.tile,
+.animated.bounceOut,
+.bounceOut.tile {
   -webkit-animation-duration: .75s;
   animation-duration: .75s; }
 
@@ -4392,7 +4434,7 @@ header.main {
   to {
     opacity: 0; } }
 
-.fadeOut {
+.fadeOut, .singleItemView.ng-leave {
   -webkit-animation-name: fadeOut;
   animation-name: fadeOut; }
 
@@ -4610,7 +4652,7 @@ header.main {
     -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in; } }
 
-.animated.flip {
+.animated.flip, .flip.tile {
   -webkit-backface-visibility: visible;
   backface-visibility: visible;
   -webkit-animation-name: flip;
@@ -5740,6 +5782,15 @@ header.main {
   /* 
 	   Meta
 	   ========================================================================== */ }
+  .tile.ng-enter {
+    -webkit-transition: 1s linear all;
+    /* Chrome */
+    transition: 1s linear all;
+    opacity: 0; }
+  .tile.ng-enter.ng-enter-active {
+    opacity: 1;
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp; }
   .tile .image {
     background-size: cover;
     background-position: center;

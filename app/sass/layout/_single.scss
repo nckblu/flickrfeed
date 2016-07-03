@@ -2,15 +2,73 @@
    Single Item
    ========================================================================== */
 
-.singleItem {
+.singleItemWrap {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-color: $white;
+	color: $blue;
 
-	/* 
-	   Meta
-	   ========================================================================== */
-	
-	.meta {
-		margin-bottom: $grid-gutter-width;
+
+	.singleItem {
+
+		position: relative;
+		
+		/* 
+		   Header
+		   ========================================================================== */
+		
+		header {
+			padding-top: $grid-gutter-width *2;
+		}
+		
+			
+		/* 
+		   Title
+		   ========================================================================== */
+		
+		.title {
+			color: $pink;
+		}
+		
+		/* 
+		   Meta
+		   ========================================================================== */
+		
+		.meta {
+			margin-bottom: $grid-gutter-width;
+		}
+		
+		/* 
+		   Back
+		   ========================================================================== */
+		.back {
+		    font-size: 15px;
+		    color: #ad2b65;
+		    position: absolute;
+		    top: 42px;
+		    right: 0;
+		}
+		
+		
 	}
-	
+
 }
 
+/* 
+   Associated UI View
+   ========================================================================== */
+
+.singleItemView {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	&.ng-leave {
+		@extend .fadeOut;
+		-webkit-animation-duration: 0.3s;
+		  animation-duration: 0.3s;
+	}
+}

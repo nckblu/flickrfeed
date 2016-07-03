@@ -3,9 +3,22 @@
    ========================================================================== */
 
 .tile {
+	@extend .animated;
 	
 	margin-bottom: $grid-gutter-width;
-	
+		&.ng-enter {
+			-webkit-transition: 1s linear all; /* Chrome */
+			transition: 1s linear all;
+			opacity: 0;
+		}
+
+		&.ng-enter.ng-enter-active {
+			opacity: 1;
+			-webkit-animation-name: fadeInUp;
+			animation-name: fadeInUp;
+		}
+
+
 	/* 
 	   Image
 	   ========================================================================== */
@@ -17,6 +30,7 @@
 		padding-top: 100%;
 
 	}
+	
 	
 	/* 
 	   Title
@@ -38,4 +52,3 @@
 	}
 
 }
-

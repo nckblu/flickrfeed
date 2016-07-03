@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('flickrfeed', [
+      'ngAnimate',
     'ui.router',
-    'ngAnimate',
     'flickrfeed.feed',
     'flickrfeed.feedDetail',
     'flickrfeed.feedService',

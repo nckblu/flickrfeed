@@ -3,10 +3,14 @@
 angular.module('flickrfeed.feedDetail', [])
 
 /* ==========================================================================
-    Feed Controller
+    Feed Detail Controller
    ========================================================================== */
-.controller('FeedDetailController', ['$scope', 'FeedService', '$stateParams',
-    function($scope, FeedService, $stateParams) {
+.controller('FeedDetailController', ['$scope', 'FeedService', '$stateParams', '$state',
+    function($scope, FeedService, $stateParams, $state) {
+
+        if (!$scope.items.length) {
+            $state.go('feed');
+        }
 
         $scope.item = $scope.items[$stateParams.index];
 
