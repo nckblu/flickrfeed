@@ -8,23 +8,40 @@ angular.module('flickrfeed.feed', [])
 .controller('FeedController', ['$scope', 'FeedService',
     function($scope, FeedService) {
 
-    var Model;
+        var Model = [];
+        var pointer = 0;
 
-    function init() {
-        changeModel(Model);
-        $scope.loaded = true;
-    }
+        function init() {
+            $scope.loadMore(function() {
+                $scope.loaded = true;
+            });
+        }
 
-    function changeModel(model) {
-        $scope.items = model;
-    }
+        function appendModel(data) {
+            Array.prototype.push.apply(Model, data);
+        }
+
+        function changeModel(data) {
+            $scope.items = data ? data : Model;
+        }
+
+        $scope.loadMore = function(callback) {
+            pointer++;
+
+            FeedService.getData(pointer).then(function(json) {
+                appendModel(json.data.items);
+
+                if (callback) {
+                    callback();
+                }
+            });
+
+            changeModel();
+
+        }
 
 
-     FeedService.getData().then(function(json) {
-        Model = json.data.items;
-        console.log('model', Model);
         init();
-     });
 
     }
 
