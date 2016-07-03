@@ -34,7 +34,7 @@ angular.module('flickrfeed.feed', [])
 
             FeedService.getData(pointer).then(function(data) {
                 appendModel(data);
-                console.log('data', data);
+
                 if (callback) {
                     callback();
                 }

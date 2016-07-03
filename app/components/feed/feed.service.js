@@ -31,6 +31,7 @@ angular.module('flickrfeed.feedService', [])
                     authorLink: getAuthorLink(data[i].author_id),
                     date_taken: getFormattedTime(data[i].date_taken),
                     link: data[i].link,
+                    tags: getTags(data[i].tags),
                     description: getCleanDescription(data[i].description)
                 });
             }
@@ -49,6 +50,25 @@ angular.module('flickrfeed.feedService', [])
 
         function getCleanDescription(description) {
             return description.replace(/<img[^>]*>/g, "");
+        }
+
+        function getTags(tags) {
+
+            if (!tags) {
+                return;
+            }
+
+            var tagsArray = [];
+
+            tags.split(" ").forEach(function(tag){
+                tagsArray.push({
+                    label: tag,
+                    link: 'https://www.flickr.com/photos/tags/' + tag
+                });
+            });
+
+
+            return tagsArray;
         }
 
         function getCleanAuthor(author) {

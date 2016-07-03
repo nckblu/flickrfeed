@@ -12,11 +12,9 @@ angular.module('flickrfeed.feedDetail', [])
             $state.go('feed');
         }
 
-        $scope.item = $scope.items[$stateParams.index];
+        $scope.wrapClass = 'in-detail';
 
-        $scope.cleanImages = function(content) {
-            return content.replace(/<img[^>]*>/g,"")
-        }
+        $scope.item = $scope.items[$stateParams.index];
     }
 
 ]);

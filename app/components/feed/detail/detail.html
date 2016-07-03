@@ -1,4 +1,4 @@
-<div class="singleItemWrap animated fadeInUp">
+<div class="singleItemWrap animated fadeInUp" stop-body-scroll>
 	<div class="container">
 		<div class="singleItem tile">
 		<div class="back" ui-sref="feed">back to results</div>
@@ -28,8 +28,11 @@
 					<div class="body" ng-bind-html="item.description | unsafe" >
 						
 					</div>
-					<div class="tags">
-						
+					<div class="tags" ng-if="item.tags">
+						<label>Tags</label>
+						<div class="tag" ng-repeat="tag in item.tags">
+							<a href="{{ tag.link }}">{{ tag.label }}</a>
+						</div>
 					</div>
 				</div>
 			</div>

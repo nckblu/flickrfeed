@@ -50,12 +50,21 @@
 		
 		.image {
 			margin-bottom: 20px;
-			
+
 			@include breakpoint($sm) {
 				margin-bottom: 0;
 			}
 		}
 	
+		
+		/* 
+		   Tags
+		   ========================================================================== */
+		
+		.tag {
+			display: inline-block;
+			margin-left: 10px;
+		}
 		
 		/* 
 		   Back
