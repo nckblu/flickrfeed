@@ -1,5 +1,4 @@
 # flickrfeed
-How to use:
 
 
 1. Clone or download
