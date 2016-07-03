@@ -3,8 +3,9 @@
 angular.module('flickrfeed', [
     'ui.router',
     'flickrfeed.feed',
-     'flickrfeed.feedService'
-
+     'flickrfeed.feedService',
+     'flickrfeed.flickrConfig',
+     'ngBackgroundPreload'
 ])
 
 .config(['$stateProvider', '$urlRouterProvider',

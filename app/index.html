@@ -1,41 +1,39 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Flickr Feed</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body ng-app="flickrfeed">
-    <!--[if lt IE 10]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    
-
-    <header class="main">
-    <div class="container">
-    
-         <h1>flickrFeed</h1>
-
-    </div>
-       
-    </header>
-    
-
-    <div class="container">
-         <div ui-view></div>
-    </div>
-   
-
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="/bower_components/angular/angular.js"></script>
-    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    
-    <script src="app.js"></script>
-    <script src="components/feed/feed.controller.js"></script>
+    <head>
+        <meta charset="utf-8">
+        <title>Flickr Feed</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body ng-app="flickrfeed">
+        <!--[if lt IE 10]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <header class="main">
+            <div class="container">
+                
+                <h1>flickrFeed</h1>
+            </div>
+            
+        </header>
+        
+        <div class="container">
+            <div ui-view></div>
+        </div>
+        
+        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/bower_components/angular/angular.js"></script>
+        <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="/bower_components/angular-animate/angular-animate.js"></script>
+        
+        <script src="app.js"></script>
+        <script src="components/feed/feed.controller.js"></script>
         <script src="components/feed/feed.service.js"></script>
-
-  </body>
+        <script src="config/flickrConfig.service.js"></script>
+        <script src="components/background-preload/backgroundPreload.directive.js"></script>
+    </body>
 </html>

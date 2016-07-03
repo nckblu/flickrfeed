@@ -5,10 +5,26 @@ angular.module('flickrfeed.feed', [])
 /* ==========================================================================
     Feed Controller
    ========================================================================== */
-.controller('FeedController', ['$scope',
-    function($scope) {
+.controller('FeedController', ['$scope', 'FeedService',
+    function($scope, FeedService) {
 
-        console.log('ready')
+    var Model;
+
+    function init() {
+        changeModel(Model);
+        $scope.loaded = true;
+    }
+
+    function changeModel(model) {
+        $scope.items = model;
+    }
+
+
+     FeedService.getData().then(function(json) {
+        Model = json.data.items;
+        console.log('model', Model);
+        init();
+     });
 
     }
 

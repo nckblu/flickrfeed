@@ -6,16 +6,17 @@ angular.module('flickrfeed.feedService', [])
     Feed Service
    ========================================================================== */
 
-.service('FeedService', ['$http',
-    function($http) {
+.service('FeedService', ['$http', 'flickrConfig',
+    function($http, flickrConfig) {
 
 
-        function returnData() {
-
+        function getData(page) {
+            var url = !page ? flickrConfig.url : flickrConfig.url + flickrConfig.paginateQuery + page;
+            return $http.jsonp(url);
         }
 
         return {
-            returnData: returnData
+            getData: getData
         }
 
     }

@@ -16,7 +16,7 @@
 
 // Bootstrap Modules
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/forms";
-// @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
 // @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
 // @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
@@ -48,6 +48,10 @@
 
 @import "base/base";
 @import "settings/variables";
-
 @import "layout/header";
+@import "layout/feed";
 @import "layout/footer";
+@import "components/animate";
+@import "components/tile";
+
+
