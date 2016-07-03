@@ -1,0 +1,34 @@
+<div class="singleItem tile">
+	
+	<header>
+	<div class="title">
+			<h1>{{ item.title }}</h1>
+	</div>
+	
+		<div class="meta">
+			<div class="author">
+				{{ item.author }}
+			</div>
+			<div class="date">
+				{{ item.date_taken}}
+			</div>
+		</div>
+	</header>
+	<div class="row">
+		
+		<div class="col-sm-4">
+				<div class="image animated" ng-background-preload image-url="{{ item.media.m }}" class-on-load="zoomIn">
+				</div>
+		</div>
+		<div class="col-sm-8">
+			<div class="body" ng-bind-html="cleanImages(item.description) | unsafe" >
+				
+			</div>
+			<div class="tags">
+				
+			</div>
+		</div>
+	</div>
+	
+	
+</div>

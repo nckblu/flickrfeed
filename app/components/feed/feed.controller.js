@@ -5,8 +5,8 @@ angular.module('flickrfeed.feed', [])
 /* ==========================================================================
     Feed Controller
    ========================================================================== */
-.controller('FeedController', ['$scope', 'FeedService',
-    function($scope, FeedService) {
+.controller('FeedController', ['$scope', 'FeedService', '$state',
+    function($scope, FeedService, $state) {
 
         var Model = [];
         var pointer = 0;
@@ -25,12 +25,18 @@ angular.module('flickrfeed.feed', [])
             $scope.items = data ? data : Model;
         }
 
+        $scope.viewDetail = function(index) {
+            var item = Model[index];
+            
+            $state.go('feed.detail', {index: index});
+        }
+
         $scope.loadMore = function(callback) {
             pointer++;
 
             FeedService.getData(pointer).then(function(json) {
                 appendModel(json.data.items);
-
+                console.log('data', json.data.items);
                 if (callback) {
                     callback();
                 }

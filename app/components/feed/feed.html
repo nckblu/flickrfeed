@@ -1,6 +1,6 @@
 <div class="wrap" ng-show="loaded">
 	
-	<div class="tile" ng-repeat="item in items">
+	<div class="tile" ng-repeat="item in items" ng-click="viewDetail($index)">
 		<div class="inner">
 			
 			<div class="row">
@@ -38,3 +38,5 @@
 	<button class="btn btn-primary btn-lg loadMore" ng-click="loadMore()">Load More</button>
 
 </div>
+
+<div ui-view></div>
