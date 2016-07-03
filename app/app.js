@@ -7,7 +7,8 @@ angular.module('flickrfeed', [
     'flickrfeed.feedDetail',
     'flickrfeed.feedService',
     'flickrfeed.flickrConfig',
-    'ngBackgroundPreload'
+    'ngBackgroundPreload',
+    'stopBodyScroll'
 ])
 
 .config(['$stateProvider', '$urlRouterProvider',
