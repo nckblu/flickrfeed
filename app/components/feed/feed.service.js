@@ -9,36 +9,27 @@ angular.module('flickrfeed.feedService', [])
 .service('FeedService', ['$http', 'flickrConfig',
     function($http, flickrConfig) {
 
-
         function getData(page) {
             var url = !page ? flickrConfig.url : flickrConfig.url + flickrConfig.paginateQuery + page;
             return $http.jsonp(url).then(function(json) {
-                console.log('json data', json.data)
                 return parseData(json.data.items);
             });
         }
 
-
         function parseData(data) {
-
-            var parsed = [];
-
-            for (var i = 0; i < data.length; i++) {
-                parsed.push({
-                    title: data[i].title,
-                    image: data[i].media.m,
-                    author: getCleanAuthor(data[i].author),
-                    authorLink: getAuthorLink(data[i].author_id),
-                    date_taken: getFormattedTime(data[i].date_taken),
-                    link: data[i].link,
-                    tags: getTags(data[i].tags),
-                    description: getCleanDescription(data[i].description)
-                });
-            }
-
-            return parsed;
+            return data.map(function(image) {
+                return {
+                    title: image.title,
+                    image: image.media.m,
+                    author: getCleanAuthor(image.author),
+                    authorLink: getAuthorLink(image.author_id),
+                    date_taken: getFormattedTime(image.date_taken),
+                    link: image.link,
+                    tags: getTags(image.tags),
+                    description: getCleanDescription(image.description)
+                }
+            });
         }
-
 
         function getFormattedTime(str) {
             return moment(str).format('Do MMM YYYY [at] HH:MM');
@@ -53,22 +44,16 @@ angular.module('flickrfeed.feedService', [])
         }
 
         function getTags(tags) {
-
             if (!tags) {
                 return;
             }
 
-            var tagsArray = [];
-
-            tags.split(" ").forEach(function(tag){
-                tagsArray.push({
+            return tags.split(" ").map(function(tag) {
+                return {
                     label: tag,
                     link: 'https://www.flickr.com/photos/tags/' + tag
-                });
+                }
             });
-
-
-            return tagsArray;
         }
 
         function getCleanAuthor(author) {
